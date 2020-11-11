@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM Intro</title>
+	<script type="text/javascript">
+		function testing() {
+			let myptag = document.getElementById('myptag');
+			myptag.innerHtml = "I'm New P Tag";
+			let header = document.querySelectorAll('.header');
+			header[0].style.color = "red";
+			header[1].innerHtml = "This is change H1";
+
+			let img = document.getElementsByTagName('img');
+			img[0].src = "../photos/shop-banner2.jpg";
+			img[0].style.width = "300px";
+			img[0].style.height = "200px";
+
+			// alert(window.location.href);	//current url
+			// window.location.assign('https://google.com');
+		}
+	</script>
+</head>
+<body>
+	<h1 class="header">Hello H1 DOM</h1>
+	<h3 class="header">Hello h3 DOM</h3><p id="myptag">Hello I'm P tag</p>
+
+	<img src="../photos/shop-banner1.jpg">
+
+	<a href="https://facebook.com" target="_blank">Go To Facebook</a>
+
+	<button onclick="testing()">Click Me</button>
+
+	<script type="text/javascript" src="custom.js"></script>
+</body>
+</html>

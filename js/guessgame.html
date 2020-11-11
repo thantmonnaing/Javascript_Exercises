@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Guessing Game</title>
+	<script type="text/javascript">
+		let random = Math.floor(Math.random() * 20) + 1;
+		console.log(`random = ${random}`);
+		let result = "Enter a number between 1 to 20";
+
+		let number = prompt(result);		
+		let arr = [];
+		let count = 0; 
+		while(random != number){
+			arr.push(number);
+			if(random > number){
+			 	number = prompt("Your number is less than random number");
+			}else{
+				number = prompt("Your number is greater than random number");				
+			}			
+			count++;
+		}
+		arr.push(number);	
+		console.log(arr);
+		alert(`your guess count is = ${arr.length}`);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

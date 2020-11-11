@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BMI</title>
+	<script type="text/javascript">
+		function calculate() {
+			let weight = parseInt(document.bmiform.weight.value);
+			let height_feet = parseInt(document.bmiform.height_feet.value);
+			let height_inches = parseInt(document.bmiform.height_inches.value);
+			let h = (height_feet * 12) + height_inches;
+			let result = 703 * weight / (h**2);
+			let res = result.toFixed(1);
+			document.bmiform.result.value = res ;
+			if(res < 18.5){
+				alert("Underweight");
+			}else if(res >= 18.5 && res <=24.9){
+				alert("Normal Weight");
+			}else if(res >= 25 && res <=29.9){
+				alert("Overweight");
+			}else if(res >= 30){
+				alert("Obesity");
+			}else{
+				document.bmiform.result.value = "0.0";
+			}
+		}
+	</script>
+
+	<style type="text/css">
+		body{
+			margin: 50px 400px;
+		}
+		#bmiform{
+			background-color: #e6faff;
+			width: 500px;
+			padding: 20px;
+			line-height: 50px;
+		}
+		h2{
+			color: #000;
+			text-align: center;
+		}
+
+		input[type="number"]#weight, input[type="number"]#height_feet,
+		 input[type="number"]#height_inches {
+			width: 100px;
+			border-radius: 50px;
+			box-shadow: 4px 0px 45px 0px rgba(0,0,0,0.16); 
+			padding: 5px 20px;
+			border: none;
+		}
+
+		input[type="submit"], button{
+			width: 100px;
+			border-radius: 50px;
+			padding: 5px;
+			outline-style: none;
+		}
+
+		input[type="number"]:focus{
+			outline: none;
+		}
+
+		.lb_gray{
+			color: gray;
+		}
+
+		.result{
+			text-align: center;
+			margin-top: 30px;
+		}
+
+		.result input[type="number"]{
+			width: 50px;
+			height: 50px;
+			text-align: center;
+			border-radius: 50px;
+			box-shadow: 4px 0px 45px 0px rgba(0,0,0,0.16); 
+			padding: 5px;
+			border: none;
+		}
+	</style>
+</head>
+<body>
+	<h2>BMI Calculator</h2>
+	<form name="bmiform" id="bmiform" onsubmit="calculate()">		
+		<label for="weight"> Weight : </label>
+		<input type="number" name="weight" id="weight">
+		<label>lbs</label><br>
+
+		<label for="height_feet"> Height : </label>
+		<input type="number" name="height_feet" id="height_feet">
+		<label class="lb_gray">feet</label>&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="number" name="height_inches" id="height_inches">
+		<label class="lb_gray">inches</label><br>
+
+		<div class="result">
+			Your BMI : <input type="number" name="result" value="0.0" readonly><br>
+			<button type="button" onclick="calculate()">Calculate</button>
+		</div>	
+	</form>	
+</body>
+</html>

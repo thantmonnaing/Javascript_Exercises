@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript</title>
+	<script type="text/javascript">
+		//variables
+		var val1 = "Value1";
+		val1 = "Value 2";	
+		console.log(val1);  // Value 2
+
+		const name = "My name is TMN"; // cannot reassign
+		console.log(name);
+
+		let age = 25;
+		console.log(typeof age);
+
+		let exam = true;
+		console.log(typeof exam);
+
+		let message = "Hello " + "TMN";  //string concat
+		console.log(message);  // Hello TMN
+
+		document.write('<h1>'+message+'</h1>');  //old
+
+		let sum = 10 + 15;
+		console.log(sum);	//25
+
+		//function
+		function area(l,h) {
+			return l*h;
+		}
+
+		let myarea = area(4,9);
+		console.log(myarea); 	//36
+
+		//condition
+		if(age > 18){
+			console.log("men");
+		}else{
+			console.log("child");
+		}	// men
+
+		//array
+		let students = ["Aye Aye","Mg Mg","Aung Aung"];
+		console.log(students);	//["Aye Aye", "Mg Mg", "Aung Aung"]
+		console.log(students.length);	//3
+		console.log(students[0]);	//Aye Aye
+
+		console.log(students.pop());	// Aung Aung
+		console.log(students);		//["Aye Aye", "Mg Mg"]
+
+		console.log(students.push("Soe Soe"));	// 3 (length)
+		console.log(students);	// ["Aye Aye", "Mg Mg", "Soe Soe"]
+
+		//looping
+		for (let i = 0;i < students.length;i++) {
+			console.log(students[i]);
+		}
+
+		// for....of loop
+		for(value of students){
+			console.log(value);
+		}
+
+		//while loop
+		const list1 = ["a","b","c"];
+		var i = 0;
+		while(i < list1.length){
+			console.log(list1[i]);	//value
+			console.log(i);	//index
+			i = i + 1;
+		}
+
+		//do while loop (at least do one time)
+		const list = ["a","b","c"];
+		var i = 0;
+		do{
+			console.log(list[i]);	//value
+			console.log(i);	//index
+			i = i + 1;
+		}while(i < list.length);
+
+		//object
+		let course = {
+			name:"Javascript",
+			time:"3 days",
+			day: "Mon to Web"
+		};
+		console.log(typeof course);	//object
+		console.log(course);	// {name: "Javascript", time: "3 days", day: "Mon to Web"}
+		console.log(course.day);	// Mon to Web
+
+	</script>
+</head>
+<body>
+	<h1>Hello Javascript!</h1>
+</body>
+</html>

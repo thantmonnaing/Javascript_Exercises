@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sum of Numbers</title>
+	<script type="text/javascript">
+		function sum() {
+			console.log(typeof document.myForm.num1.value);
+			let n1 = parseInt(document.myForm.num1.value);
+			let n2 = parseInt(document.myForm.num2.value);
+			let result = n1 + n2 ;
+			document.myForm.result.value = result;
+		}
+	</script>
+</head>
+<body>
+	<form name="myForm">
+		<label for="num1">Number1 : </label>
+		<input type="number" name="num1" id="num1"><br><br>
+
+		<label for="num2">Number2 : </label>
+		<input type="number" name="num2" id="num2"><br><br>
+
+		<label>Result : </label>
+		<input type="number" name="result" readonly=""><br><br>
+
+		<button type="button" onclick="sum()">Sum</button>
+	</form>
+</body>
+</html>
